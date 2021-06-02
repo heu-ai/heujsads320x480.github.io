@@ -60,12 +60,19 @@ function clickpattern(){
         op.src = imges[1];
         //console.log("Image Changed!!!...", op.src);
     }
-    else if (op.src.search('TELA%20MALBEC.png') || op.src.search('TELA%20LILY.png') || op.src.search('TELA%20EGEO%20DOLCE.png'))
+    else if (op.src.search('TELA%20MALBEC.png') > -1 || op.src.search('TELA%20LILY.png') > -1 || op.src.search('TELA%20EGEO%20DOLCE.png') > -1)
     {
-        //console.log("Clicked to move 6");
-        op.src = imges[5];
+     
+     op.src = imges[5];
+	ImageMaplast(op);
         //console.log("Image Changed!!!...", op.src);
     }
+	
+	    // else if (op.src.search('TELA%20CTA.png') > -1)
+    // {
+		  // window.location.href = "https://www.google.com/maps/search/oboticario";
+        // //console.log("Image Changed!!!...", op.src);
+    // }
 };
 
 
@@ -81,7 +88,7 @@ function ImageMap(op) {
     area.shape = "rect";
     area.coords = "295,376,161,431";
     //area.onmouseover = function(){//console.log("rightkey");};
-    area.onclick = function(){clickset = 5;};
+    area.onclick = function(){clickset = 5; };
 
     var area = document.getElementById("bigbtn");
     area.shape = "rect";
@@ -90,6 +97,25 @@ function ImageMap(op) {
     area.onclick = function(){bigbtn = 4; if (clickset==3){op.src = imges[2]; } else if (clickset==5){op.src = imges[4];} else op.src = imges[3];};
  };
 
+function ImageMaplast(op) {
+	
+	
+	
+    var area = document.getElementById("leftkey");
+//area.onmouseover = function(){console.log("leftkey");};
+    area.shape = "rect";
+    area.coords = "49,301,273,360";
+   // area.onmouseover = function(){console.log("left");};
+    area.onclick = function(){ window.location.href = "https://www.google.com/maps/search/oboticario"; };
+
+
+
+    var area = document.getElementById("bigbtn");
+    area.shape = "rect";
+    area.coords = "50,377,271,435";
+   //area.onmouseover = function(){console.log("bigbtn");};
+    area.onclick = function(){ op.src = imges[0];};
+ };
 
 // Finding a Position of Mouse Click
 function FindPosition(oElement)
@@ -113,10 +139,15 @@ function FindPosition(oElement)
 //Getting a Co-ordinates of Mouse click
 function GetCoordinates(e)
 {
+
   var PosX = 0;
   var PosY = 0;
   var ImgPos;
   ImgPos = FindPosition(output);
+  
+  
+  
+  
   if (!e) var e = window.event;
   if (e.pageX || e.pageY)
   {
