@@ -115,7 +115,7 @@ function ImageMaplast(op) {
     area.shape = "rect";
     area.coords = "50,377,271,435";
    //area.onmouseover = function(){console.log("bigbtn");};
-    area.onclick = function(){ op.src = imges[0];};
+    area.onclick = function(){ op.src = imges[0]; window.location.href = ""; };
  };
 
 // Finding a Position of Mouse Click
