@@ -68,11 +68,12 @@ function clickpattern(){
         //console.log("Image Changed!!!...", op.src);
     }
 	
-	    // else if (op.src.search('TELA%20CTA.png') > -1)
-    // {
-		  // window.location.href = "https://www.google.com/maps/search/oboticario";
-        // //console.log("Image Changed!!!...", op.src);
-    // }
+	    else if (op.src.search('TELA%20CTA.png') > -1)
+    {
+		 op.src = imges[0];
+		 // window.location.href = "https://www.google.com/maps/search/oboticario";
+        //console.log("Image Changed!!!...", op.src);
+    }
 };
 
 
